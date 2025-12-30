@@ -1,0 +1,88 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; justify-content: center; align-items: center; 
+    min-height: 100vh; 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.calculator { 
+    background: linear-gradient(145deg, #2c3e50, #34495e); 
+    padding: 25px; border-radius: 25px; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    max-width: 350px; width: 100%;
+}
+
+#display { 
+    width: 100%; height: 80px; font-size: 32px; 
+    text-align: right; padding: 20px 15px; margin-bottom: 20px;
+    border: none; border-radius: 15px; background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px); color: white; font-weight: 300;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.buttons { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(5, 70px);
+    gap: 15px; 
+}
+
+button { 
+    border: none; border-radius: 15px; 
+    color: white; cursor: pointer; font-size: 24px; font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button:active { transform: scale(0.95); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+button:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
+
+/* Clear - Orange */
+.clear { background: linear-gradient(145deg, #f39c12, #e67e22); }
+.clear:hover { background: linear-gradient(145deg, #f1c40f, #f39c12); }
+
+/* Backspace - Red */
+.backspace { background: linear-gradient(145deg, #e74c3c, #c0392b); }
+.backspace:hover { background: linear-gradient(145deg, #ec7063, #e74c3c); }
+
+/* Operations - Yellow (÷ × - +) */
+button:nth-child(3), button:nth-child(4), button:nth-child(8), button:nth-child(12) {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+}
+button:nth-child(3):hover, button:nth-child(4):hover, button:nth-child(8):hover, button:nth-child(12):hover {
+    background: linear-gradient(145deg, #f39c12, #e67e22);
+}
+
+/* Equals - Green */
+.equals { 
+    background: linear-gradient(145deg, #27ae60, #229954); 
+    grid-row: 4 / 6; grid-column: 4; 
+}
+.equals:hover { background: linear-gradient(145deg, #58d68d, #27ae60); }
+
+/* ALL NUMBER BUTTONS - GRAY */
+button:nth-child(5), button:nth-child(6), button:nth-child(7),  /* 7 8 9 */
+button:nth-child(9), button:nth-child(10), button:nth-child(11), /* 4 5 6 */
+button:nth-child(13), button:nth-child(14), button:nth-child(15) { /* 1 2 3 */
+    background: linear-gradient(145deg, #95a5a6, #7f8c8d) !important;
+}
+button:nth-child(5):hover, button:nth-child(6):hover, button:nth-child(7):hover,
+button:nth-child(9):hover, button:nth-child(10):hover, button:nth-child(11):hover,
+button:nth-child(13):hover, button:nth-child(14):hover, button:nth-child(15):hover {
+    background: linear-gradient(145deg, #bdc3c7, #95a5a6);
+}
+
+/* Zero - Blue */
+.zero { background: linear-gradient(145deg, #3498db, #2980b9); }
+.zero:hover { background: linear-gradient(145deg, #5dade2, #3498db); }
+
+/* 00 - Blue */
+button:nth-child(18) { background: linear-gradient(145deg, #3498db, #2980b9); }
+button:nth-child(18):hover { background: linear-gradient(145deg, #5dade2, #3498db); }
+
+/* Decimal - Blue */
+button:last-child { background: linear-gradient(145deg, #3498db, #2980b9); }
+button:last-child:hover { background: linear-gradient(145deg, #5dade2, #3498db); }
